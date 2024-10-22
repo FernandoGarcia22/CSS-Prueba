@@ -1,0 +1,427 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "section"
+        "footer";
+        background-color: #f9f3f3;
+}
+
+header{
+    grid-area: header;
+    align-content: center; 
+    background-color: #255564 
+}
+
+nav{
+    grid-area: nav;
+    background: linear-gradient(45deg, #133d49, #255564);
+}
+
+main{
+    grid-area: main;
+    background-color: rgba(177, 156, 156, 0.795);
+}
+
+footer{
+    grid-area: footer;
+    margin: 0;
+    padding: 1rem;
+    background-color: #314c70e0;
+}
+
+section{
+    grid-area: section;
+    background-color: #133d49;
+    padding: 1rem;
+}
+
+.divHeader{
+    display: flex;
+    justify-content: space-around;
+    gap: 12rem; 
+    align-items: center;
+}
+.iconUp{
+    color: white;
+    font-size: larger;
+}
+
+.iconDown{
+    color: white;
+    font-size: larger;
+}
+
+.divNav{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown{
+    width: 20rem;
+    margin-top: 0.5rem; 
+    height: 2rem;
+}
+
+.letra1{
+    color: white;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.mt{
+    margin-top: 2rem;
+}
+
+.mb{
+    margin-bottom: 1.2rem;
+}
+
+.mainContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.divMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.FFimg{
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 0.5rem;
+    filter: grayscale(100%); /* Imágenes en blanco y negro por defecto */
+    transition: filter 0.5s ease; /* Transición suave al cambiar el filtro */
+}
+
+.FFimg:hover {
+    filter: grayscale(0%); /* Vuelve a color cuando se pasa el ratón */
+}
+
+button{
+    width: 6rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;    
+    background-color: #255564;
+    color: white;
+    border-radius: 1rem;
+    font-size: medium;
+}
+
+button:hover {
+    background-color: #0e3c4b; /* Color más oscuro al hacer hover */
+}
+
+.divPages{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.pages{
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid rgba(128, 128, 128, 0.226);
+    align-content: center;    
+    text-align: center;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.listNone{
+    display: none;
+}
+
+.listNone a {
+    color: white; /* Cambia este color al que desees */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 1.2rem; /* Tamaño de letra, ajusta según prefieras */
+    font-weight: bold; /* Opción para resaltar más el texto */
+}
+
+/* Estilo cuando el enlace es seleccionado o al pasar el mouse (hover) */
+.listNone a:hover {
+    color: lightgray; /* Color cuando pasas el cursor por encima */
+    text-decoration: underline; /* Opción de subrayado al hacer hover */
+}
+
+.logo{
+    width: 8rem;
+    margin-top: 1rem;
+    filter: brightness(0) invert(1);
+}
+
+.divFooter1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;    
+    height: 2.5rem;
+}
+
+.footer-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Espacio entre las redes sociales y el correo */
+    margin-bottom: 1rem; /* Espacio entre el correo y los derechos reservados */
+    color: white; /* Color del texto */
+    font-size: 1rem; /* Tamaño del texto del correo */
+}
+
+.divFooter2{
+    display: flex;
+    color: white;    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media( width < 576px){
+    .sticky{
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+@media(width >= 576px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 6fr 1fr 1fr;
+        width: 100vw;
+        height: 100vh;
+        grid-template-areas: 
+        "header header"
+        "nav main"
+        "nav section"
+        "footer footer";
+    }
+
+    .divHeader{
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .iconNone{
+        display: none;
+    }
+
+    .listNone{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: center;
+    }    
+
+    .divNav{
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+        height: 70vh;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+
+    .dropdown{
+        width: 7rem;
+        height: 2rem;
+        margin-top: 0.5rem;
+    }
+
+    .mainContainer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .divMain{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;        
+        height: 10rem;
+        width: 10rem;
+    }
+
+    section{
+        height: 20vh;
+        width: 80vw;
+        margin: 0;
+    }
+
+    ul{
+        list-style-type: none;
+        gap: 20px;
+        color: white;
+    }
+
+    li{
+        text-decoration: none;
+    }
+
+    footer{
+        background-color: #314c70e0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .divFooter1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+    }    
+    .divFooter2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: 0;
+    }
+}
+
+@media (width >= 992px) {
+
+    body{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 5fr 1fr;
+        width: 100vw;
+        height: 100vh;
+        grid-template-areas: 
+        "header nav"
+        "header main"
+        "footer section";
+    }
+
+    .divHeader{
+        display: flex;
+        flex-direction: column;
+        width: 15vw;
+        height: 90vh;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .dropdown{
+        width: 50rem;
+        height: 2rem;
+        margin-top: 0.5rem;
+    }
+
+    .mainContainer{
+        display: grid;
+        width: 85vw;
+        height: 80vh;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+
+    .divNav{
+        display: flex;
+        flex-direction: column;
+        width: 85vw;
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .divMain{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 10rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .funkoImg{
+        width: 12rem;
+        height: 9rem;
+    }
+
+    .iconUp{
+        color: white;
+        font-size: larger;
+        margin-top: 2rem;
+        margin-right: 2rem;
+    }
+
+    section{
+        height: 18vh;
+        margin: 0;
+    }
+
+    footer{
+        background-color: #314c70e0; /* Azul pastel */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 15vw;
+        height: 18vh;
+        margin: 0;
+    }
+    .divFooter1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }    
+    .divFooter2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .iconDown{
+        color: white;
+        font-size: larger;
+        margin-bottom: 20px;
+    }
+
+    .listNone{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
